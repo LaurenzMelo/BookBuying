@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,43 +14,40 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/admin_step', function () {
-    return view('welcome');
-});
-
-Route::get('/', function(){
-    return view('index');
-});
-
-Route::get('/about', function(){
-    return view('about');
-});
-
-Route::get('/faq', function(){
-    return view('faq');
-});
-
-Route::get('/books', 'BooksController@index');
-
-Route::group(['middleware' => ['auth']], function () {
-    Route::group(['prefix' => '/admin', 'namespace' => 'Admin'], function(){
-        Route::get('/list-books', 'BooksController@index')->name('list-books');
-        Route::post('list-books', 'BooksController@store');
-        Route::delete('/list-books/{book}', 'BooksController@destroy');
-        Route::get('/list-books/{book}', 'BooksController@show');
-        Route::get('/list-books/{book}/edit-books', 'BooksController@edit');
-        Route::put('/list-books/{book}', 'BooksController@update');
-
-        Route::get('/list-authors', 'AuthorsController@index')->name('list-authors');
-        Route::post('/list-authors', 'AuthorsController@store');
-        Route::delete('/list-authors/{author}', 'AuthorsController@destroy');
-        Route::get('/list-authors/{author}', 'AuthorsController@show');
-        Route::get('/list-authors/{author}/edit-authors', 'AuthorsController@edit');
-        Route::put('/list-authors/{author}', 'AuthorsController@update');
-    });
-});
-
-
+/**
+ * Login routes
+ */
 Auth::routes();
 
+/**
+ * Client-facing Routes
+ */
+Route::view('/', 'index');
+Route::view('/admin_step', 'welcome');
+Route::view('/about', 'about');
+Route::view('/faq', 'faq');
+Route::get('/books', 'BooksController@index');
 Route::get('/home', 'HomeController@index')->name('home');
+
+/**
+ * Admin-facing Routes
+ */
+Route::group(['middleware' => ['auth'], 'namespace' => 'Admin', 'prefix' => '/admin'], function () {
+    Route::group(['prefix' => '/books'], function () {
+        Route::get('/', 'BooksController@index')->name('books.index');
+        Route::post('/', 'BooksController@store')->name('books.create');
+        Route::delete('/{book}', 'BooksController@destroy')->name('books.delete');
+        Route::get('/{book}', 'BooksController@show')->name('books.show');
+        Route::get('/{book}/edit', 'BooksController@edit')->name('books.edit');
+        Route::put('/{book}', 'BooksController@update')->name('books.update');
+    });
+
+    Route::group(['prefix' => '/authors'], function () {
+        Route::get('/', 'AuthorsController@index')->name('authors.index');
+        Route::post('/', 'AuthorsController@store')->name('authors.create');
+        Route::delete('/{author}', 'AuthorsController@destroy')->name('authors.delete');
+        Route::get('/{author}', 'AuthorsController@show')->name('authors.show');
+        Route::get('/{author}/edit', 'AuthorsController@edit')->name('authors.edit');
+        Route::put('/{author}', 'AuthorsController@update')->name('authors.update');
+    });
+});

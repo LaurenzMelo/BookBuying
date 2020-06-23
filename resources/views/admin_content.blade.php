@@ -9,7 +9,7 @@
                 <p>
                     You have a total of <b>{{ $books->count() }}</b> uploaded books.
                 </p>
-                <a href="/admin/list-books" class="text-decoration-none color-text-dark"> See More.. </a>
+                <a href="{{ route('books.index') }}" class="text-decoration-none color-text-dark"> See More.. </a>
             </div>
         </div>
         <div class="col-md-6">

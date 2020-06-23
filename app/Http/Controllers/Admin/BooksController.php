@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Author;
 use App\Book;
 use App\Http\Controllers\Controller;
 use App\Http\Middleware\TrimStrings;
@@ -11,6 +12,12 @@ use Illuminate\Support\Facades\DB;
 class BooksController extends Controller
 {
     public function index(){
+        // Get a list of books
+        $books = Book::orderBy('title', 'ASC')->paginate(5);
+
+        // Get a list of authors
+        $authors = Author::orderBy('name', 'ASC')->paginate(5);
+
         return view('admin.list-books', [
             'books' => auth()->user()->bookPaginate(),
             'authors' => auth()->user()->authorlist(),

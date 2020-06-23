@@ -177,6 +177,7 @@
       <workItem from="1592833398530" duration="4871000" />
       <workItem from="1592882653654" duration="3049000" />
       <workItem from="1592886422586" duration="3227000" />
+      <workItem from="1592891209297" duration="1276000" />
     </task>
     <servers />
   </component>
@@ -188,9 +189,10 @@
       <screen x="62" y="0" width="1298" height="768" />
     </state>
     <state x="456" y="174" key="#com.intellij.fileTypes.FileTypeChooser/62.0.1298.768@62.0.1298.768" timestamp="1592477206847" />
-    <state x="441" y="139" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1592477708926">
-      <screen x="62" y="0" width="1298" height="768" />
+    <state x="561" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1592892353276">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="561" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1592892353276" />
     <state x="441" y="139" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/62.0.1298.768@62.0.1298.768" timestamp="1592477708926" />
     <state x="520" y="129" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method0" timestamp="1592801736191">
       <screen x="62" y="0" width="1298" height="768" />
