@@ -18,25 +18,21 @@ class BooksController extends Controller
         // Get a list of authors
         $authors = Author::orderBy('name', 'ASC')->paginate(5);
 
-        return view('admin.list-books', [
-            'books' => auth()->user()->bookPaginate(),
-            'authors' => auth()->user()->authorlist(),
-
-        ]);
+        return view('/admin/list-books', compact('books', 'authors'));
     }
 
     public function store(Request $request){
 
         Book::create($this->validateBook());
 
-        return redirect()->route('list-books');
+        return redirect()->route('books.create');
     }
 
     public function destroy($id){
 
         $book = Book::where('id', $id)->delete();
 
-        return redirect()->route('list-books');
+        return redirect()->route('books.index');
     }
 
     public function show(Book $book){
@@ -56,7 +52,7 @@ class BooksController extends Controller
 
         $book->update($this->validateBook());
 
-        return redirect('admin/list-books/' . $book->id);
+        return redirect()->route('books.update', $book->id);
     }
 
     public function validateBook(): array

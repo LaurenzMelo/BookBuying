@@ -7,11 +7,12 @@
 
             <div class="col-md-9 bg-white shadow p-4" style="border-radius:20px">
                 <div class="mb-3 ml-2 justify-content-center text-2xl color-text-dark font-weight-bold">
+                    <a class="text-decoration-none color-text-dark text-3xl mr-4" href="{{ route('authors.show', $author->id) }}"> <i class="fas fa-chevron-circle-left"></i> </a>
                     Edit {{ $author->name }}'s Information
                 </div>
 
                 <div>
-                    <form method="POST" action="{{ route('authors.update', ['author' => $author->id]) }}">
+                    <form method="POST" action="{{ route('authors.update',  $author->id) }}">
                         @csrf
                         @method('PUT')
 
@@ -30,7 +31,7 @@
 
                         <hr class="mt-4">
                         <button type="submit" class="btn btn-primary float-right" name="save-btn">Save changes</button>
-                        <a href="{{ route('authors.show', ['authors' => $author->id]) }}" type="button" class="btn btn-secondary float-right mr-2">Back</a>
+                        <a href="{{ route('authors.show', $author->id) }}" type="button" class="btn btn-secondary float-right mr-2">Back</a>
                     </form>
                 </div>
             </div>

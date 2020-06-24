@@ -4,29 +4,34 @@ namespace App\Http\Controllers\Admin;
 
 use App\Author;
 use App\Book;
+use App\Http\Controllers\Controller;
+use App\Http\Middleware\TrimStrings;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AuthorsController extends Controller
 {
     public function index(){
+        // Get a list of books
+        $books = Book::orderBy('title', 'ASC')->paginate(5);
 
-        return view('admin.list-authors',[
-            'authors' => auth()->user()->authorPaginate(),
-            'books' => auth()->user()->booklist()
-        ]);
+        // Get a list of authors
+        $authors = Author::orderBy('name', 'ASC')->paginate(5);
+
+        return view('/admin/list-authors', compact('books', 'authors'));
     }
 
     public function store(Request $request){
 
         Author::create($this->validateAuthor());
 
-        return redirect()->route('list-authors');
+        return redirect()->route('authors.create');
     }
 
     public function destroy($id){
         $author = Author::where('id', $id)->delete();
 
-        return redirect()->route('list-authors');
+        return redirect()->route('authors.index');
     }
 
     public function show(Author $author){
@@ -39,10 +44,9 @@ class AuthorsController extends Controller
 
     public function update(Author $author){
 
-        //$book = Book::find($id);
         $author->update($this->validateAuthor());
 
-        return redirect('admin/list-authors/' . $author->id);
+        return redirect()->route('authors.update', $author->id);
     }
 
     /**

@@ -23,7 +23,7 @@ class BooksController extends Controller
 
     public function show(Book $book)
     {
-        return view('admin.show-books', ['book' => $book]);
+        return view('books', $book->id);
     }
 
 }

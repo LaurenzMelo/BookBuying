@@ -16,13 +16,13 @@
                             <div>
                                 <ul>
                                     <li>
-                                        <a href="list-authors/{{$author->id}}"
+                                        <a href="{{ route('authors.show', $author->id) }}"
                                            class="mb-0 text-base text-decoration-none
                                            color-text-dark font-weight-bold">
                                             {{ $author->name }}
                                         </a>
 
-                                        <form method="POST" action="{{ action('AuthorsController@destroy', $author->id) }}">
+                                        <form method="POST" action="{{ action('Admin\AuthorsController@destroy', $author->id) }}">
                                             @csrf
                                             @method('DELETE')
 
@@ -62,7 +62,7 @@
                     </button>
                 </div>
                 <div class="modal-body p-4">
-                    <form method="POST" action="/admin/list-authors">
+                    <form method="POST" action="{{ route('authors.create') }}">
                         @csrf
 
                         <label class="mb-0 color-text-dark"> Author Name </label>

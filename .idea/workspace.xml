@@ -1,7 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="913f6c5c-858c-47be-ae2d-80e7d7aab765" name="Default Changelist" comment="" />
+    <list default="true" id="913f6c5c-858c-47be-ae2d-80e7d7aab765" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/AuthorsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AuthorsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/BooksController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/BooksController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BooksController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BooksController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/edit-authors.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/edit-authors.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/edit-books.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/edit-books.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/list-authors.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/list-authors.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/list-books.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/list-books.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/show-authors.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/show-authors.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/show-books.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/show-books.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin_sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin_sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,6 +42,9 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -115,6 +150,7 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1dIpeDZfACnGbE0rfMQmLKSAvXp" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -122,6 +158,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../sample5" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -178,11 +215,24 @@
       <workItem from="1592882653654" duration="3049000" />
       <workItem from="1592886422586" duration="3227000" />
       <workItem from="1592891209297" duration="1276000" />
+      <workItem from="1592964926677" duration="6344000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="456" y="174" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1592477206847">
@@ -222,9 +272,9 @@
       <screen x="62" y="0" width="1298" height="768" />
     </state>
     <state x="367" y="172" key="run.anything.popup/62.0.1298.768@62.0.1298.768" timestamp="1592131263011" />
-    <state x="374" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1592886000683">
+    <state x="374" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1592974686940">
       <screen x="62" y="0" width="1298" height="768" />
     </state>
-    <state x="374" y="89" width="672" height="678" key="search.everywhere.popup/62.0.1298.768@62.0.1298.768" timestamp="1592886000683" />
+    <state x="374" y="89" width="672" height="678" key="search.everywhere.popup/62.0.1298.768@62.0.1298.768" timestamp="1592974686940" />
   </component>
 </project>

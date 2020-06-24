@@ -6,11 +6,16 @@
             @include('admin_sidebar')
 
             <div class="col-md-9 bg-white shadow p-4" style="border-radius:20px">
-                <div class="mb-3 ml-2 justify-content-center text-2xl color-text-dark font-weight-bold">
-                    {{ $book->title }}
-                    <a href="/admin/list-books/{{$book->id}}/edit-books" class="text-decoration-none float-right p-1 text-base btn-add"> Edit This Book </a>
+                <div>
+                    <a class="text-decoration-none color-text-dark justify-content-center text-3xl" href="{{ route('books.index') }}"> <i class="fas fa-chevron-circle-left"></i> </a>
+                    <a href=" {{ route('books.edit', $book->id) }}" class="text-decoration-none float-right p-1 text-base btn-add"> Edit This Book </a>
                 </div>
-                <div class="ml-2 text-lg">
+
+                <div class="mb-3 ml-4 mt-3 justify-content-center text-2xl color-text-dark font-weight-bold">
+                    {{ $book->title }}
+                </div>
+
+                <div class="ml-4 text-lg">
                     <img
                         src="{{ asset('images/image_holder.jpg') }}"
                         alt="Book Cover"

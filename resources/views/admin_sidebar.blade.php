@@ -19,12 +19,12 @@
                 </a>
             </li>
             <li class="mb-2">
-                <a href="/admin/list-books" class="text-decoration-none color-text-dark">
+                <a href="{{ route('books.index') }}" class="text-decoration-none color-text-dark">
                     List of Books & Chapters
                 </a>
             </li>
             <li class="mb-2">
-                <a href="/admin/list-authors" class="text-decoration-none color-text-dark">
+                <a href="{{ route('authors.index') }}" class="text-decoration-none color-text-dark">
                     List of Authors
                 </a>
             </li>

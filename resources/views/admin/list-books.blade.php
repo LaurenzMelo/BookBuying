@@ -16,13 +16,13 @@
                             <div>
                                 <ul>
                                     <li>
-                                        <a href="/admin/list-books/{{$book->id}}"
+                                        <a href="{{ route('books.show', $book->id) }}"
                                            class="mb-0 text-base
                                            text-decoration-none color-text-dark
                                            font-weight-bold">
                                             {{ $book->title }}
                                         </a>
-                                        <form method="POST" action="{{ action('BooksController@destroy', $book->id) }}">
+                                        <form method="POST" action="{{ action('Admin\BooksController@destroy', $book->id) }}">
                                         @csrf
                                         @method('DELETE')
 
@@ -60,7 +60,7 @@
                     </button>
                 </div>
                 <div class="modal-body p-4">
-                    <form method="POST" action="/admin/list-books">
+                    <form method="POST" action="{{ route('books.create') }}">
                         @csrf
                         <label class="mb-0 color-text-dark"> Digital Object Identifier </label>
                         <input type="text" class="form-control mb-3" placeholder="DOI" name="doi" required>
