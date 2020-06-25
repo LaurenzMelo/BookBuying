@@ -41,6 +41,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(Book::class);
     }
+    public function journals()
+    {
+        return $this->hasMany('App\Journal');
+    }
 
     public function authors()
     {

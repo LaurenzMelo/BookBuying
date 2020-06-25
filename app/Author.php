@@ -19,22 +19,39 @@ class Author extends Model
         return $this->hasMany('App\Book');
     }
 
+    public function journals()
+    {
+        return $this->hasMany('App\Journal');
+    }
+
     public function getTotalDownloadsAttribute()
     {
-        return Book::where('author_id', $this->id)->sum('total_download');
+        $book = Book::where('author_id', $this->id)->sum('total_download');
+        $journal = Journal::where('author_id', $this->id)->sum('total_download');
+
+        return $book + $journal;
     }
+
+
     public function getTotalUBookAttribute()
     {
-        return Book::where('author_id', $this->id)->sum('unclaimed_download');
+        $book = Book::where('author_id', $this->id)->sum('unclaimed_download');
+        $journal = Journal::where('author_id', $this->id)->sum('unclaimed_download');
+
+        return $book + $journal;
     }
 
     public function getUnclaimedDownloadsAttribute()
     {
         $books = Book::where('author_id', $this->id)
-            ->select(DB::raw('price * unclaimed_download AS product'))
+            ->select(DB::raw('price * unclaimed_download AS product1'))
             ->get();
 
-        return $books->sum('product') ?? 0;
+        $journals = Journal::where('author_id', $this->id)
+            ->select(DB::raw('price * unclaimed_download AS product2'))
+            ->get();
+
+        return $books->sum('product1') + $journals->sum('product2') ?? 0;
     }
 
 }

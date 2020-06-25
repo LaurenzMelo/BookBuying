@@ -13,10 +13,10 @@ class BooksController extends Controller
 {
     public function index(){
         // Get a list of books
-        $books = Book::orderBy('title', 'ASC')->paginate(5);
+        $books = Book::orderBy('title', 'ASC')->paginate(10);
 
         // Get a list of authors
-        $authors = Author::orderBy('name', 'ASC')->paginate(5);
+        $authors = Author::orderBy('name', 'ASC');
 
         return view('/admin/list-books', compact('books', 'authors'));
     }
@@ -40,7 +40,6 @@ class BooksController extends Controller
     }
 
     public function edit(Book $book){
-
         return view('admin.edit-books', compact('book'), [
             'authors' => auth()->user()->authorlist()
         ]);

@@ -27,6 +27,7 @@ Route::view('/admin_step', 'welcome');
 Route::view('/about', 'about');
 Route::view('/faq', 'faq');
 Route::get('/books', 'BooksController@index');
+Route::get('/books/{book}', 'BooksController@show')->name('user.show');
 Route::get('/home', 'HomeController@index')->name('home');
 
 /**
@@ -40,6 +41,15 @@ Route::group(['middleware' => ['auth'], 'namespace' => 'Admin', 'prefix' => '/ad
         Route::get('/{book}', 'BooksController@show')->name('books.show');
         Route::get('/{book}/edit', 'BooksController@edit')->name('books.edit');
         Route::put('/{book}', 'BooksController@update')->name('books.update');
+    });
+
+    Route::group(['prefix' => '/journals'], function () {
+        Route::get('/', 'JournalsController@index')->name('journals.index');
+        Route::post('/', 'JournalsController@store')->name('journals.create');
+        Route::delete('/{journal}', 'JournalsController@destroy')->name('journals.delete');
+        Route::get('/{journal}', 'JournalsController@show')->name('journals.show');
+        Route::get('/{journal}/edit', 'JournalsController@edit')->name('journals.edit');
+        Route::put('/{journal}', 'JournalsController@update')->name('journals.update');
     });
 
     Route::group(['prefix' => '/authors'], function () {

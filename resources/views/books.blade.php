@@ -1,6 +1,5 @@
 @extends('layouts.layout')
 
-
 @section('content')
     <div class="container-fluid p-5 mw-100">
         @include('navbar')
@@ -29,60 +28,46 @@
             </div>
             <div class="row mt-2">
                 <div class="col-md-6 col-xs-12">
-                    <div class="col-md-12 border shadow p-4">
-                        <h2 class="font-weight-bold text-center font-oswald">E-BOOKS</h2>
-                        <ul class="mt-4 font-mont">
-                            <li>
-                                <a href="#"> Book #1</a>
-                                <p> Author: </p>
-                            </li>
-                            <li>
-                                <a href="#"> Book #2</a>
-                                <p> Author: </p>
-                            </li>
-                            <li>
-                                <a href="#"> Book #3</a>
-                                <p> Author: </p>
-                            </li>
-                            <li>
-                                <a href="#"> Book #4</a>
-                                <p> Author: </p>
-                            </li>
-                            <li>
-                                <a href="#"> Book #5</a>
-                                <p> Author: </p>
-                            </li>
-                        </ul>
-                        <h4 class="text-center"> Pagination Here </h4>
+                    <div class="col-md-12 border shadow p-4" style="height: 520px">
+                        <h2 class="font-weight-bold text-center font-oswald mb-4">E-BOOKS</h2>
+                        @foreach ($books as $book)
+                            <div>
+                                <ul class="font-mont">
+                                    <li>
+                                        <a href="{{ route('user.show', $book->id) }}"
+                                           class="mb-0 text-base
+                                           text-decoration-none
+                                           ">
+                                            {{ $book->title }}
+                                        </a>
+                                        <p class="mb-0"> Author: <a> {{ $book->author->name }} </a> </p>
+                                    </li>
+                                </ul>
+                            </div>
+                        @endforeach
+                        {{ $books->links() }}
                     </div>
                 </div>
 
                 <div class="col-md-6 col-xs-12">
-                    <div class="col-md-12 border shadow p-4">
+                    <div class="col-md-12 border shadow p-4" style="height: 520px">
                         <h2 class="font-weight-bold text-center font-oswald">JOURNALS</h2>
-                        <ul class="mt-4 font-mont">
-                            <li>
-                                <a href="#"> Journal #1</a>
-                                <p> Author: </p>
-                            </li>
-                            <li>
-                                <a href="#"> Journal #2</a>
-                                <p> Author: </p>
-                            </li>
-                            <li>
-                                <a href="#"> Journal #3</a>
-                                <p> Author: </p>
-                            </li>
-                            <li>
-                                <a href="#"> Journal #4</a>
-                                <p> Author: </p>
-                            </li>
-                            <li>
-                                <a href="#"> Journal #5</a>
-                                <p> Author: </p>
-                            </li>
-                        </ul>
-                        <h4 class="text-center"> Pagination Here </h4>
+                        @foreach ($journals as $journal)
+                            <div>
+                                <ul class="font-mont">
+                                    <li>
+                                        <a href="{{ route('user.show', $journal->id) }}"
+                                           class="mb-0 text-base
+                                           text-decoration-none
+                                           ">
+                                            {{ $journal->title }}
+                                        </a>
+                                        <p class="mb-0"> Author: <a> {{ $journal->author->name }} </a> </p>
+                                    </li>
+                                </ul>
+                            </div>
+                        @endforeach
+                        {{ $journals->links() }}
                     </div>
                 </div>
             </div>

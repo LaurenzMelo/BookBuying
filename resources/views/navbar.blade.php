@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg pl-5">
     <a class="navbar-brand" href="/">
-        <img src="images/step-logo.jpg" height="50px" width="120px" class="ml-2">
+        <img src="{{ asset('images/step-logo.jpg') }}" height="50px" width="120px" class="ml-2">
     </a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

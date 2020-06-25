@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Author;
 use App\Book;
 use App\Http\Middleware\TrimStrings;
+use App\Journal;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -16,14 +17,15 @@ class BooksController extends Controller
         $books = Book::orderBy('title', 'ASC')->paginate(5);
 
         // Get a list of authors
-        $authors = Author::orderBy('name', 'ASC')->paginate(5);
+        $authors = Author::orderBy('name', 'ASC');
 
-        return view('books', compact('books', 'authors'));
+        $journals = Journal::orderBy('title', 'ASC')->paginate(5);
+
+        return view('books', compact('books', 'authors', 'journals'));
     }
 
-    public function show(Book $book)
-    {
-        return view('books', $book->id);
+    public function show(Book $book){
+        return view('show-specific', ['book' => $book]);
     }
 
 }

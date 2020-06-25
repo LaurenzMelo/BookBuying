@@ -26,6 +26,7 @@
                     <p class="mb-0"> Digital Object Identifier: {{ strtoupper($book->doi) }} </p>
                     <p class="mb-0"> Author: <a> {{ $book->author->name }} </a> </p>
                     <p class="mb-0"> No. of chapters: {{ $book->chapters }}</p>
+                    <p class="mb-0"> Price: <a> {{ $book->price }} </a> </p>
                     <p class="mb-0"> Total Downloads: {{ $book->total_download }}</p>
                     <p class="text-danger mt-3"> Unclaimed Downloads: {{ $book->unclaimed_download  }}</p>
                     <p class="mt-5">Chapters:</p>

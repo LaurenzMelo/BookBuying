@@ -24,6 +24,11 @@
                 </a>
             </li>
             <li class="mb-2">
+                <a href="{{ route('journals.index') }}" class="text-decoration-none color-text-dark">
+                    List of Journals
+                </a>
+            </li>
+            <li class="mb-2">
                 <a href="{{ route('authors.index') }}" class="text-decoration-none color-text-dark">
                     List of Authors
                 </a>
