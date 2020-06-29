@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Book;
 use App\Author;
+use App\Journal;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -27,7 +28,8 @@ class HomeController extends Controller
     {
         $books = Book::all();
         $authors = Author::all();
+        $journals = Journal::all();
 
-        return view('home', compact('books', 'authors'));
+        return view('home', compact('books', 'authors', 'journals'));
     }
 }

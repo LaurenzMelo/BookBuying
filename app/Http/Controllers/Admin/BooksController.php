@@ -11,14 +11,18 @@ use Illuminate\Support\Facades\DB;
 
 class BooksController extends Controller
 {
-    public function index(){
+    public function index(Request $request){
+        $s = $request->input('s');
+
         // Get a list of books
-        $books = Book::orderBy('title', 'ASC')->paginate(10);
+        $books = Book::orderBy('title', 'ASC')
+                    ->search($s)
+                    ->paginate(10);
 
         // Get a list of authors
         $authors = Author::orderBy('name', 'ASC');
 
-        return view('/admin/list-books', compact('books', 'authors'));
+        return view('/admin/list-books', compact('books', 'authors', 's'));
     }
 
     public function store(Request $request){

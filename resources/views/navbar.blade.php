@@ -13,7 +13,7 @@
                 <a class="nav-link color-text-dark" href="/">HOME</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link color-text-dark" href="/books">BOOKS</a>
+                <a class="nav-link color-text-dark" href="/books">BOOKS & JOURNALS</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link color-text-dark" href="/faq">FAQs</a>

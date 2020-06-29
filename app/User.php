@@ -39,7 +39,7 @@ class User extends Authenticatable
 
     public function books()
     {
-        return $this->hasMany(Book::class);
+        return $this->hasMany('App\Book');
     }
     public function journals()
     {
@@ -48,7 +48,7 @@ class User extends Authenticatable
 
     public function authors()
     {
-        return $this->hasMany(Author::class);
+        return $this->hasMany('App\Author');
     }
 
     public function booklist(){

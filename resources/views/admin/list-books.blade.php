@@ -6,9 +6,15 @@
             @include('admin_sidebar')
 
             <div class="col-md-9 bg-white shadow p-4" style="border-radius:20px">
-                <div class="mb-3 ml-2 justify-content-center text-2xl">
+                <div class="mb-2 ml-2 justify-content-center text-2xl">
                     List of Books
                     <button data-toggle="modal" data-target="#addBooks" class="text-decoration-none float-right p-1 text-base btn-add"> Add A Book! </button>
+                </div>
+                <div class="mb-4">
+                    <form action="{{ route('books.index') }}" method="get">
+                        <input type="text" placeholder="Search Here" name="s" class="search-book p-2" value="{{ isset($s) ? $s : '' }}">
+                        <button type="submit" class="btn-submit p-2 pl-3 pr-3"><i class="fas fa-search"></i></button>
+                    </form>
                 </div>
                 <div class="row">
                     <div class="col-md-12">
@@ -42,8 +48,7 @@
                             <p> No books yet. </p>
                         @endforelse
 
-                        {{ $books->links() }}
-
+                        {{ $books->appends(['s' => $s])->links() }}
                     </div>
                 </div>
             </div>
