@@ -18,8 +18,16 @@ class Book extends Model
         return $this->belongsTo('App\Author', 'author_id');
     }
 
+    public function chapter()
+    {
+        return $this->hasMany('App\Chapter');
+    }
+
     public function scopeSearch($query, $s)
     {
-        return $query->where('title', 'like', '%' . $s . '%');
+        $author = Author::where('name', 'LIKE', "%{$s}%")->select('id');
+
+        return $query->whereIn('author_id', $author)
+                    ->orWhere('title', 'like', '%' . $s . '%');
     }
 }

@@ -11,17 +11,22 @@ use Illuminate\Support\Facades\DB;
 
 class BooksController extends Controller
 {
-    public function index()
-    {
+    public function index(Request $request){
+        $s = $request->input('s');
+
         // Get a list of books
-        $books = Book::orderBy('title', 'ASC')->paginate(5);
+        $books = Book::orderBy('title', 'ASC')
+                    ->search($s)
+                    ->paginate(5);
 
         // Get a list of authors
         $authors = Author::orderBy('name', 'ASC');
 
-        $journals = Journal::orderBy('title', 'ASC')->paginate(5);
+        $journals = Journal::orderBy('title', 'ASC')
+                    ->search($s)
+                    ->paginate(5);
 
-        return view('books', compact('books', 'authors', 'journals'));
+        return view('books', compact('books', 'authors', 'journals', 's'));
     }
 
     public function show(Book $book){

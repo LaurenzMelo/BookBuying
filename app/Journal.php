@@ -17,4 +17,12 @@ class Journal extends Model
     {
         return $this->belongsTo('App\Author', 'author_id');
     }
+
+    public function scopeSearch($query, $s)
+    {
+        $author = Author::where('name', 'LIKE', "%{$s}%")->select('id');
+
+        return $query->whereIn('author_id', $author)
+            ->orWhere('title', 'like', '%' . $s . '%');
+    }
 }

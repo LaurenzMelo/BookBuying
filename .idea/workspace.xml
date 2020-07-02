@@ -20,16 +20,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="913f6c5c-858c-47be-ae2d-80e7d7aab765" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/search-books.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ChaptersController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Author.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Author.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Book.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Book.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/BooksController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/BooksController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/AuthorsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AuthorsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/JournalsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/JournalsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BooksController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BooksController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Journal.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Journal.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/list-books.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/list-books.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin_content.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin_content.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/navbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/navbar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/list-authors.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/list-authors.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/list-journals.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/list-journals.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/books.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/books.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,18 +160,19 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../sample5" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Controllers/Admin" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\bookbuying\app\Http\Controllers\Admin" />
-      <recent name="C:\xampp\htdocs\bookbuying\resources\views" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\bookbuying\app\Http\Controllers\Admin" />
       <recent name="C:\xampp\htdocs\bookbuying\app\Http\Controllers" />
       <recent name="C:\xampp\htdocs\bookbuying\public\images" />
       <recent name="C:\xampp\htdocs\bookbuying\public" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\bookbuying\app\Http\Controllers\Admin" />
+      <recent name="C:\xampp\htdocs\bookbuying\resources\views" />
     </key>
   </component>
   <component name="RunManager">
@@ -217,7 +221,9 @@
       <workItem from="1593060701932" duration="6095000" />
       <workItem from="1593078041330" duration="362000" />
       <workItem from="1593139746264" duration="1375000" />
-      <workItem from="1593424258467" duration="5372000" />
+      <workItem from="1593424258467" duration="6989000" />
+      <workItem from="1593503678682" duration="2698000" />
+      <workItem from="1593681576361" duration="1196000" />
     </task>
     <servers />
   </component>
@@ -254,10 +260,10 @@
       <screen x="62" y="0" width="1298" height="768" />
     </state>
     <state x="491" y="139" key="FileChooserDialogImpl/62.0.1298.768@62.0.1298.768" timestamp="1592889025221" />
-    <state x="482" y="91" key="NewPhpClassDialog" timestamp="1592649216132">
+    <state x="482" y="91" key="NewPhpClassDialog" timestamp="1593681875213">
       <screen x="62" y="0" width="1298" height="768" />
     </state>
-    <state x="482" y="91" key="NewPhpClassDialog/62.0.1298.768@62.0.1298.768" timestamp="1592649216132" />
+    <state x="482" y="91" key="NewPhpClassDialog/62.0.1298.768@62.0.1298.768" timestamp="1593681875213" />
     <state x="526" y="318" key="ReplaceDuplicatesPrompt" timestamp="1592801739993">
       <screen x="62" y="0" width="1298" height="768" />
     </state>
@@ -274,17 +280,17 @@
       <screen x="62" y="0" width="1298" height="768" />
     </state>
     <state x="367" y="172" key="run.anything.popup/62.0.1298.768@62.0.1298.768" timestamp="1592131263011" />
-    <state x="374" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1593426057622">
+    <state x="374" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1593504756397">
       <screen x="62" y="0" width="1298" height="768" />
     </state>
-    <state x="374" y="89" width="672" height="678" key="search.everywhere.popup/62.0.1298.768@62.0.1298.768" timestamp="1593426057622" />
+    <state x="374" y="89" width="672" height="678" key="search.everywhere.popup/62.0.1298.768@62.0.1298.768" timestamp="1593504756397" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/resources/views/admin/list-journals.blade.php</url>
-          <line>67</line>
+          <line>75</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">

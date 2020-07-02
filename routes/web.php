@@ -26,7 +26,7 @@ Route::view('/', 'index');
 Route::view('/admin_step', 'welcome');
 Route::view('/about', 'about');
 Route::view('/faq', 'faq');
-Route::get('/books', 'BooksController@index');
+Route::get('/books', 'BooksController@index')->name('user.books');
 Route::get('/books/{book}', 'BooksController@show')->name('user.show');
 Route::get('/home', 'HomeController@index')->name('home');
 

@@ -10,6 +10,15 @@
                     List of Authors
                     <button data-toggle="modal" data-target="#addAuthor" class="text-decoration-none float-right p-1 text-base btn-add"> Add An Author! </button>
                 </div>
+
+                <div class="mb-4">
+                    <form action="{{ route('authors.index') }}" method="get">
+                        <input type="text" placeholder="Search Here" name="s" class="search-book p-2" value="{{ isset($s) ? $s : '' }}">
+                        <button type="submit" class="btn-submit p-2 pl-3 pr-3"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+
+
                 <div class="row">
                     <div class="col-md-12">
                         @forelse($authors as $author)

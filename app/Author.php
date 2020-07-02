@@ -14,14 +14,19 @@ class Author extends Model
         return $this->belongsToMany('App\User');
     }
 
-    public function books()
+    public function book()
     {
         return $this->hasMany('App\Book');
     }
 
-    public function journals()
+    public function journal()
     {
         return $this->hasMany('App\Journal');
+    }
+
+    public function chapter()
+    {
+        return $this->hasMany('App\Chapter');
     }
 
     public function getTotalDownloadsAttribute()
@@ -52,6 +57,12 @@ class Author extends Model
             ->get();
 
         return $books->sum('product1') + $journals->sum('product2') ?? 0;
+    }
+
+    public function scopeSearch($query, $s)
+    {
+        return $query->where('name', 'like', '%' . $s . '%')
+                    ->orWhere('email', 'like', '%' . $s . '%');
     }
 
 }

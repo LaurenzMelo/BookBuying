@@ -18,9 +18,9 @@
             <div class="row mt-5">
                 <div class="col-md-12 col-xs-12">
                     <div class="col-md-12 border shadow p-3 mb-3">
-                        <form method="" action="POST">
-                            <input type="text" placeholder="Search Here" name="search_book" class="search-book p-2">
-                            <button class="btn-submit p-2 pl-3 pr-3" name="submit_but"><i class="fas fa-search"></i></button>
+                        <form method=get action="{{ route('user.books') }}">
+                            <input type="text" placeholder="Search Here" name="s" class="search-book p-2" value="{{ isset($s) ? $s : '' }}">
+                            <button type="submit" class="btn-submit p-2 pl-3 pr-3" name="submit_but"><i class="fas fa-search"></i></button>
                         </form>
                         <p class="mb-0 mt-1 font-mont">You can search the title or the author of the book/journal here.</p>
                     </div>
